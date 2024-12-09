@@ -7,6 +7,7 @@ import productRouter from './routes/product.route.js'
 import errorHandlerMiddleware from './middlewares/errorHandler.middleware.js'
 import pool from './config/dbMysql.config.js'
 import ProductRepository from './repositories/product.repository.js'
+import { customCorsMiddleware } from './middlewares/cors.middleware.js'
 
 
 
@@ -15,6 +16,8 @@ const app = express()
 
 
 //ZnxV6fapfnXLP4WO Cluster pass
+
+app.use(customCorsMiddleware)
 
 //Whitelist o baneo de IPs, manejado por objeto de configuracion en el uso de cors
 //Middleware que habilita a las consultas de origen cruzado
