@@ -12,7 +12,10 @@ const pool = mysql.createPool(
 )
 
 pool.getConnection().then(
-    () =>{console.dir('Conexion con mySql exitosa')}
+    (connection) =>{
+        console.dir('Conexion con mySql exitosa')
+        connection.release()
+    }
 )
 .catch(
     err=>{

@@ -62,7 +62,7 @@ export const registerController = async (req, res, next) => {
             expiresIn: '1d'
         })
 
-        const redirectUrl = ENVIROMENT.BACKEND_URL + '/api/auth/verify-email/' + validationToken
+        const redirectUrl = ENVIROMENT.FRONTEND_URL + '/verify-email/' + validationToken
 
         const result = await transporterEmail.sendMail({
             subject: 'Valida tu email',
