@@ -1,5 +1,6 @@
 const allowed_origins = [
     'http://localhost:5173',
+    'https://utn-tn-pwa-frontend.vercel.app/'
 ];
 
 export const customCorsMiddleware = (req, res, next) => {
